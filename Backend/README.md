@@ -173,13 +173,13 @@ $ npm run start:prod
 
 #### Product Service API
 
-- **URL**: http://localhost:5000/api
+- **URL**: http://localhost:5000/api-docs
 - **Features**: Product CRUD operations, search, filtering, pagination
 - **Endpoints**: Create, Read, Update, Delete, List products
 
 #### Order Service API
 
-- **URL**: http://localhost:5001/api
+- **URL**: http://localhost:5001/api-docs
 - **Features**: Order management,  CRUD operations, status updates, order history, search, filtering, pagination, add and delete products from orders
 - **Endpoints**: Create orders, update order, list orders, order details, delete order, delete products from order
 
