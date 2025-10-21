@@ -187,8 +187,8 @@ $ npm run start:prod
 
 1. **Start the services** using Docker Compose or local development
 2. **Open Swagger UI** in your browser:
-   - Product API: http://localhost:5000/api
-   - Order API: http://localhost:5001/api
+   - Product API: http://localhost:5000/api-docs
+   - Order API: http://localhost:5001/api-docs
 3. **Explore endpoints** - Click on any endpoint to see details
 4. **Test APIs directly** - Use the "Try it out" button to make requests
 5. **View responses** - See real request/response examples
