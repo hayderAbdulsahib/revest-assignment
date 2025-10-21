@@ -53,6 +53,14 @@ This will start:
 - Product API (port 5000)
 - Adminer (database admin interface on port 8080)
 
+**Note**: After starting the services, you can populate the database with sample data by running:
+
+```bash
+# Run seed command to populate database with sample data
+$ cd Backend/datasource-service
+$ npm run seed
+```
+
 ### Option 2: Local Development
 
 If you prefer to run services locally without Docker:
@@ -83,7 +91,19 @@ $ cd Backend/order-service
 $ npm install
 ```
 
-#### 3. Start Services
+#### 3. Seed the Database
+
+Populate the database with sample data:
+
+```bash
+# Navigate to datasource-service and run seed command
+$ cd Backend/datasource-service
+$ npm run seed
+```
+
+This will populate the database with sample products and orders for testing.
+
+#### 4. Start Services
 
 Run each service in separate terminals:
 
@@ -160,8 +180,8 @@ $ npm run start:prod
 #### Order Service API
 
 - **URL**: http://localhost:5001/api
-- **Features**: Order management, status updates, order history
-- **Endpoints**: Create orders, update status, list orders, order details
+- **Features**: Order management,  CRUD operations, status updates, order history, search, filtering, pagination, add and delete products from orders
+- **Endpoints**: Create orders, update order, list orders, order details, delete order, delete products from order
 
 ### 🚀 Quick Start with Swagger
 
