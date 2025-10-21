@@ -1,0 +1,70 @@
+// proto file should be shared between the microservice as a sub module 
+// with it own repo, so in case of a change you change it once
+
+syntax = "proto3";
+
+package product;
+
+service ProductService {
+  rpc CreateProduct(CreateProductRequest) returns (Response);
+  rpc ListProducts(ListProductsRequest) returns (Response);
+  rpc UpdateProductById(UpdateProductRequest) returns (Response);
+  rpc DeleteProductById(DeleteProductRequest) returns (Response);
+  rpc FindProductById(FindProductRequest) returns (Response);
+}
+
+message Response {
+  bool isError = 1;
+  string message = 2;
+  string data = 3;
+}
+
+message CreateProductRequest {
+  string name = 1;
+  double price = 2;
+}
+
+message ListProductsRequest {
+  ListProductsFilters queries = 1;
+}
+
+message ListProductsFilters {
+  int32 page = 1;
+  int32 limit = 2;
+  
+  string sortBy = 3;
+  string sortOrder = 4;
+  
+  string search = 5;
+  
+  double minPrice = 6;
+  double maxPrice = 7;
+  
+  bool isActive = 8;
+  bool isDeleted = 9;
+  
+  string createdFrom = 10;
+  string createdTo = 11;
+  string updatedFrom = 12;
+  string updatedTo = 13;
+}
+
+message UpdateProductRequest {
+  string id = 1;
+  UpdateProductByPayload payload = 2;
+}
+
+
+message UpdateProductByPayload {
+  string name = 1;
+  double price = 2;
+  bool isActive = 3;
+}
+
+message DeleteProductRequest {
+  string id = 1;
+}
+
+message FindProductRequest {
+  string id = 1;
+}

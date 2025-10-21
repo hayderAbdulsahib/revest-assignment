@@ -1,0 +1,185 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+  border-radius: 16px;
+  padding: 4px 8px 4px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.tag:hover {
+  background-color: #c7d2fe;
+}
+
+.tag-content {
+  white-space: nowrap;
+}
+
+.tag-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.tag-remove:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.tag-remove svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Variants */
+.tag-primary {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border-color: #bfdbfe;
+}
+
+.tag-primary:hover {
+  background-color: #bfdbfe;
+}
+
+.tag-success {
+  background-color: #dcfce7;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.tag-success:hover {
+  background-color: #bbf7d0;
+}
+
+.tag-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.tag-warning:hover {
+  background-color: #fde68a;
+}
+
+.tag-error {
+  background-color: #fecaca;
+  color: #991b1b;
+  border-color: #fca5a5;
+}
+
+.tag-error:hover {
+  background-color: #fca5a5;
+}
+
+.tag-neutral {
+  background-color: #f3f4f6;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.tag-neutral:hover {
+  background-color: #d1d5db;
+}
+
+/* Sizes */
+.tag-small {
+  padding: 2px 6px 2px 8px;
+  font-size: 11px;
+  gap: 4px;
+  border-radius: 12px;
+}
+
+.tag-small .tag-remove {
+  width: 14px;
+  height: 14px;
+}
+
+.tag-small .tag-remove svg {
+  width: 10px;
+  height: 10px;
+}
+
+.tag-large {
+  padding: 6px 12px 6px 14px;
+  font-size: 15px;
+  gap: 8px;
+  border-radius: 20px;
+}
+
+.tag-large .tag-remove {
+  width: 18px;
+  height: 18px;
+}
+
+.tag-large .tag-remove svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Non-removable tags */
+.tag:not(.tag-removable) {
+  padding: 4px 10px;
+}
+
+.tag-small:not(.tag-removable) {
+  padding: 2px 8px;
+}
+
+.tag-large:not(.tag-removable) {
+  padding: 6px 14px;
+}
+
+/* Disabled state */
+.tag-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tag-disabled:hover {
+  background-color: inherit;
+}
+
+.tag-disabled .tag-remove {
+  cursor: not-allowed;
+}
+
+.tag-disabled .tag-remove:hover {
+  background-color: transparent;
+  color: inherit;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .tag {
+    font-size: 12px;
+    padding: 3px 6px 3px 8px;
+  }
+
+  .tag-small {
+    font-size: 10px;
+    padding: 2px 4px 2px 6px;
+  }
+
+  .tag-large {
+    font-size: 14px;
+    padding: 5px 10px 5px 12px;
+  }
+}

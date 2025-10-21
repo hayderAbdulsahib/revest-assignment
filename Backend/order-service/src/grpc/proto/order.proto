@@ -1,0 +1,83 @@
+// proto file should be shared between the microservice as a sub module 
+// with it own repo, so in case of a change you change it once
+
+syntax = "proto3";
+
+package order;
+
+service OrderService {
+  rpc CreateOrder(CreateOrderRequest) returns (Response);
+  rpc ListOrders(ListOrdersRequest) returns (Response);
+  rpc UpdateOrderById(UpdateOrderRequest) returns (Response);
+  rpc DeleteOrderById(DeleteOrderRequest) returns (Response);
+  rpc FindOrderById(FindOrderRequest) returns (Response);
+  rpc DeleteOrderProducts(DeleteOrderProductsRequest) returns (Response);
+}
+
+message Response {
+  bool isError = 1;
+  string message = 2;
+  string data = 3;
+}
+
+message CreateOrderRequest {
+  string customerName = 1;
+  string customerEmail = 2;
+  string customerPhone = 3;
+  string notes = 4;
+  repeated string productIds = 5;
+}
+
+message ListOrdersRequest {
+  ListOrdersFilters queries = 1;
+}
+
+message ListOrdersFilters {
+  int32 page = 1;
+  int32 limit = 2;
+  
+  string sortBy = 3;
+  string sortOrder = 4;
+  
+  string search = 5;
+  
+  string status = 6;
+  string customerName = 7;
+  string customerEmail = 8;
+  string customerPhone = 9;
+  bool isCanceled = 10;
+  
+  string createdFrom = 11;
+  string createdTo = 12;
+  string updatedFrom = 13;
+  string updatedTo = 14;
+}
+
+message UpdateOrderRequest {
+  string id = 1;
+  UpdateOrderByPayload payload = 2;
+}
+
+message UpdateOrderByPayload {
+  string status = 1;
+  string cancellationReason = 2;
+  string customerName = 3;
+  string customerEmail = 4;
+  string customerPhone = 5;
+  string notes = 6;
+  bool isCanceled = 7;
+  repeated string productIds = 8;
+}
+
+message DeleteOrderRequest {
+  string id = 1;
+}
+
+message FindOrderRequest {
+  string id = 1;
+}
+
+message DeleteOrderProductsRequest {
+  string id = 1;
+  repeated string productIds = 2;
+}

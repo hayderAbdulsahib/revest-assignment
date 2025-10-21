@@ -1,0 +1,137 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-container {
+  width: 33.333%;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  animation: slideInFromRight 0.4s ease-out;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+  transform: scale(1.1);
+}
+
+.modal-content {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Tablet: 40-50% width */
+@media (max-width: 1024px) {
+  .modal-container {
+    width: 45%;
+  }
+
+  .modal-header {
+    padding: 20px 24px;
+  }
+
+  .modal-content {
+    padding: 24px;
+  }
+}
+
+/* Mobile: 80-90% width */
+@media (max-width: 768px) {
+  .modal-container {
+    width: 55%;
+  }
+
+  .modal-header {
+    padding: 16px 20px;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+}
+
+/* Small mobile: nearly full screen */
+@media (max-width: 480px) {
+  .modal-container {
+    width: 95%;
+  }
+
+  .modal-header {
+    padding: 12px 16px;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+  }
+
+  .modal-content {
+    padding: 16px;
+  }
+}

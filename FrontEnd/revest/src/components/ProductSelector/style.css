@@ -1,0 +1,151 @@
+.product-selector {
+  position: relative;
+  width: 100%;
+}
+
+.product-selector-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.product-selector-field:hover:not(.disabled) {
+  border-color: #9ca3af;
+}
+
+.product-selector-field.open {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.product-selector-field.disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.selected-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+  min-height: 24px;
+}
+
+.placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.product-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+  border-radius: 16px;
+  padding: 4px 8px 4px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.product-tag:hover {
+  background-color: #c7d2fe;
+}
+
+.product-tag-name {
+  white-space: nowrap;
+}
+
+.product-tag-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.product-tag-remove:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.product-tag-remove svg {
+  width: 12px;
+  height: 12px;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  color: #6b7280;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Position dropdown above the field */
+.product-selector .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.product-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+}
+
+.product-dropdown-item .product-name {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.product-dropdown-item .product-price {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .product-selector-field {
+    padding: 6px 10px;
+    min-height: 36px;
+  }
+
+  .product-tag {
+    font-size: 12px;
+    padding: 3px 6px 3px 8px;
+  }
+}
